@@ -10,8 +10,12 @@ SRCS		:= \
 	src/str_extra.c \
 	src/dict.c \
 	src/dict_line.c \
+	src/dict_line_utils.c \
 	src/dict_read.c \
+	src/dict_buf.c \
 	src/num.c \
+	src/convert_utils.c \
+	src/convert_read.c \
 	src/convert.c \
 	src/stdin_mode.c \
 	src/main.c

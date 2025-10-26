@@ -65,6 +65,7 @@ int		dict_process_line(t_dict *d, const char *line);
 int		dl_find_colon(const char *s);
 char	*dl_substr_dup(const char *s, int start, int end);
 char	*dl_extract_number(const char *left);
+int		dl_parse_line(const char *line, char **out_num, char **out_word);
 
 /* num.c */
 char	*normalize_number(const char *input);
@@ -76,7 +77,16 @@ int		print_number_words(const t_dict *d, const char *num_str);
 int		print_triad_words(const t_dict *d, int triad, t_print *p);
 int		print_scale_word(const t_dict *d, int groups_left, t_print *pr);
 
+/* convert_read.c */
+int		cr_has_more_nonzero(const char *s, int pos, int len);
+int		cr_read_first_triad(const char *s, int first_len, int *pos);
+int		cr_read_next_triad(const char *s, int *pos);
+
 /* stdin_mode.c */
 int		process_stdin(const t_dict *d);
+
+/* dict_buf.c */
+int		dr_read_all(int fd, char **out_buf, int *out_len);
+int		dr_process_buffer(t_dict *d, char *buf, int len);
 
 #endif
